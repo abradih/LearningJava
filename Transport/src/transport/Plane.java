@@ -8,7 +8,7 @@ package transport;
  */
 public class Plane {
 	// Life of Plane
-	private double odometer;
+	private int odometer;
 	private int trips;
 	private int totalPassengers;
 	private double totalRevenue;
@@ -21,34 +21,40 @@ public class Plane {
 	private double tankSize;
 	private double fuel;
 	private double fuelUsed;
+	private double ticket;
+
 	/**
 	 * Makes new plane with given parameters.
 	 * 
 	 * @param costPerMile
 	 * @param MaxPassengers
 	 */
-	public Plane(double costPerMilePassengers, int maxPassengers, double tank) {
+	public Plane(int maxPassengers, double tank, double ticketPrice ) {
 		// Life of Plane
 		odometer = 0;
 		trips = 0;
 		totalPassengers = 0;
 		// for plane
-		perMileRate = costPerMilePassengers;
 		sizeOfPlane = maxPassengers;
 		tankSize = tank;
-		
-		
+		ticket = ticketPrice;
+
 	}
 
-	public double GetTotalMiles() {
+	public int GetTotalMiles() {
 		return odometer;
 	}
 
-	public void fly(double miles, double mpg) {
+	public void fly(int miles, double mpg) {
 		odometer = odometer + miles;
 		trips++;
-		
+
 		// todo crash if fuel <0
 
+	}
+
+	public double getTotalTickets() {
+		double result = (ticket * totalPassengers);
+		return result;
 	}
 }

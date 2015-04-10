@@ -6,7 +6,7 @@ public class PlaneTest {
 		Plane Alpha = new Plane(5.25, 125, 5);
 
 		System.out.println(Alpha.GetTotalMiles());
-		Alpha.fly(25.0,2);
+		Alpha.fly(250,2);
 		System.out.println(Alpha.GetTotalMiles());
 	}
 	
